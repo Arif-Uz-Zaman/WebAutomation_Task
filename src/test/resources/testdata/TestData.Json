@@ -1,0 +1,14 @@
+{
+	"username": "standard_user",
+	"password" : "secret_sauce",
+	
+	"firstProuctName": "Sauce Labs Backpack",
+	"secondProductName": "Sauce Labs Bike Light",
+	
+	"shipingInformation": {
+		"firstName": "John",
+		"lastName": "Doe",
+		"postalCode": "12345"
+	}
+	
+}
