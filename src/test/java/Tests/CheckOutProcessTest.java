@@ -1,6 +1,7 @@
 package Tests;
 
 import org.json.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.CartPage;
@@ -13,7 +14,7 @@ public class CheckOutProcessTest extends TestBase {
 	String username = DataReader.getStringValue("username", "TestData");
 	String password = DataReader.getStringValue("password", "TestData");
 	String firstProductName = DataReader.getStringValue("firstProuctName", "TestData");
-	JSONObject shippingInformation = DataReader.getJsonObject("shippingInformation", "TestData");
+	JSONObject shippingInformation = DataReader.getJsonObject("shipingInformation", "TestData");
 	
 	
 	@Test
@@ -27,7 +28,9 @@ public class CheckOutProcessTest extends TestBase {
 		cartPage.clickOnCheckoutButton();
 		checkOutPage.enterShippingInformation(shippingInformation);
 		checkOutPage.clickOnContinueButton();
-		
+		Assert.assertTrue(productPage.isProductInCart(firstProductName), "First product item is not appears in the summary");
+		checkOutPage.clickOnFinishButton();
+		Assert.assertTrue(checkOutPage.isSucessMessageIsDisplayed(), "Order is not placed successfully");
 		
 	}
 

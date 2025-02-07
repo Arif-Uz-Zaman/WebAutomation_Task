@@ -56,7 +56,7 @@ public class CheckoutPage {
 		finishButton.click();
 	}
 	
-	public boolean isOrderPlacedSuccessfully() {
+	public boolean isSucessMessageIsDisplayed() {
 		ExplicitWait.visibilityOfElementLocated(sucessMessage.getLocator(), 5);
 		return sucessMessage.isDisplayed();
 	}
