@@ -17,8 +17,6 @@ public class SortingProductsTest extends TestBase {
 	@Test
 	public void verifyProductSortingFunctionality() {
 		ProductPage productPage = new ProductPage();
-		CartPage cartPage = new CartPage();
-		CheckoutPage checkOutPage = new CheckoutPage();
 		login(username, password);
 		boolean PriceShowInLowToHigh  = productPage.verifyProductSortingByPrice( "Price (low to high)");
 		Assert.assertTrue(PriceShowInLowToHigh, "Price is not showing in low to high order");
@@ -31,14 +29,6 @@ public class SortingProductsTest extends TestBase {
 		
 		boolean NameShowInZtoA  = productPage.verifyProductSortingByName( "Name (Z to A)");
 		Assert.assertTrue(NameShowInZtoA, "Name is not showing in Z to A order");
-		
-		try {
-			Thread.sleep(50000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		
 	}
 	

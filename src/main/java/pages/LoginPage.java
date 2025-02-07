@@ -11,8 +11,13 @@ public class LoginPage {
 	private final Element passwordField = new Element(By.id("password"));
 	private final Element loginButton = new Element(By.id("login-button"));
 	private final Element errorMessage = new Element(By.xpath("//h3[@data-test='error' and contains(text(),'Username and password do not match')]"));
+	private final Element loginPageTitle = new Element(By.xpath("//div[@class='login_logo']"));
 	
-	
+	public boolean isLoginPageDisplayed() {
+		ExplicitWait.visibilityOfElementLocated(loginPageTitle.getLocator(), 5);
+		return loginPageTitle.isDisplayed();
+	}
+
 	public void enterUsername(String username) {
 		ExplicitWait.elementToBeClickable(usernameField.getLocator(), 5);
 		usernameField.getElement().sendKeys(username);

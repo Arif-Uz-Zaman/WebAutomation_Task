@@ -18,6 +18,8 @@ public class CheckoutPage {
 	private final Element finishButton = new Element(By.id("finish"));
 	private final Element sucessMessage = new Element(By.xpath("//h2[@class='complete-header' and text()='Thank you for your order!']"));
 	
+	
+	
 	public boolean checkoutYourInformationPageTitleIsDisplayed() {
 		return checkoutYourInformationPageTitle.isDisplayed();
 	}
@@ -71,6 +73,7 @@ public class CheckoutPage {
 	    enterPostalCode(postalCode);
 	}
 	
+
 	
 	
 	

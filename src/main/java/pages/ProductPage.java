@@ -20,6 +20,8 @@ public class ProductPage {
     private final Element sortingDropdown = new Element(By.className("product_sort_container"));
     private final Element itemNames = new Element(By.className("inventory_item_name"));
     private final Element itemPrices = new Element(By.className("inventory_item_price"));
+	private final Element menuButton = new Element(By.id("react-burger-menu-btn"));
+	private final Element logoutButton = new Element(By.id("logout_sidebar_link"));
 
 
     // Access product element by name
@@ -150,6 +152,17 @@ public class ProductPage {
 
         return productPricesAfterSorting.equals(sortedPrices);
     }
+    
+	public void clickOnMenuButton() {
+		ExplicitWait.elementToBeClickable(menuButton.getLocator(), 5);
+		menuButton.click();
+	}
+	
+	public void clickOnLogoutButton() {
+		ExplicitWait.elementToBeClickable(logoutButton.getLocator(), 5);
+		logoutButton.click();
+	}
+	
 	
 
     
