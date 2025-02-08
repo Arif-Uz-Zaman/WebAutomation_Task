@@ -130,7 +130,7 @@ public class ProductPage {
     public boolean verifyProductSortingByName(String sortingOption) {
         selectSortingOption(sortingOption);
         List<String> productNamesAfterSorting = getProductNames();
-        System.out.println(productNamesAfterSorting);
+        //System.out.println(productNamesAfterSorting);
         List<String> sortedList = new ArrayList<>(productNamesAfterSorting);
         Collections.sort(sortedList);
 
@@ -145,7 +145,7 @@ public class ProductPage {
     public boolean verifyProductSortingByPrice(String sortingOption) {
         selectSortingOption(sortingOption);
         List<Double> productPricesAfterSorting = getProductPrices();
-        System.out.println(productPricesAfterSorting);
+        //System.out.println(productPricesAfterSorting);
         List<Double> sortedPrices = new ArrayList<>(productPricesAfterSorting);
         Collections.sort(sortedPrices);
 
