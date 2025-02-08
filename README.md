@@ -86,6 +86,7 @@ WebAutomation_Task
   - If Maven is not installed, follow this guide: [How to resolve 'mvn' is not recognized](https://medium.com/nerd-for-tech/how-to-resolve-the-mvn-is-not-recognized-as-an-internal-or-external-command-operable-program-or-145914fcaaab)
 - **Selenium WebDriver**
 - **TestNG Plugin** (for running test cases)
+  - If TestNG Plugin is not installed in Eclipse, follow this guide: [How To Install TestNG In Eclipse](https://www.lambdatest.com/blog/how-to-install-testng-in-eclipse-step-by-step-guide/)
 
 ## Installation & Setup
 
