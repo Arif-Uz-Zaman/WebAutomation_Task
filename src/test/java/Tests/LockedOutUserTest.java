@@ -10,7 +10,7 @@ public class LockedOutUserTest extends TestBase {
 	 String lockedUsername = DataReader.getStringValue("lockedUsername", "TestData");
      String Password = DataReader.getStringValue("password", "TestData");
 
-	@Test
+	@Test(groups="Locked-Out User Validation Test")
     public void verifyALockedUserCantLogin() {
 		
 		// Step 1: Login with locked out user credentials
