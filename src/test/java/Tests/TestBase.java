@@ -13,12 +13,15 @@ import driver.Browser;
 import pages.LoginPage;
 import utility.DataReader;
 
+
+// TestBase class to define the setup and teardown methods
 @Listeners(ChainTestListener.class)
 public abstract class TestBase {
 	
 	protected WebDriver driver;		
     private int implicitWaitTimeInSeconds = DataReader.getIntValue("implicitWaitTimeInSeconds", "config");
 	
+    // Setup method to initialize the driver and open the browser
 	@BeforeMethod
 	public void setUp() {
 		driver = Browser.initialize();
@@ -27,12 +30,14 @@ public abstract class TestBase {
 	}
 	
 	
-	
+	// Teardown method to quit the driver
 	@AfterMethod
 	public void tearDown() {
 		Browser.quitDriver();
 	}
 
+	
+	// Login method to login to the application
 	 public void login(String username, String password) {
 	        LoginPage loginPage = new LoginPage();
 	        loginPage.login(username, password);

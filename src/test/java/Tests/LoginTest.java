@@ -18,7 +18,10 @@ public class LoginTest extends TestBase {
 	@Test(groups="Login Functionality Test")
 	public void verifyLoginWithValidCredentials() {
 		ProductPage productPage = new ProductPage();
+		// Step 1: Login with valid credentials
 		login(username,password);
+		
+		// Step 2: Verify the product page is displayed
 		Assert.assertTrue(productPage.productTitleIsDisplayed());
 	}
 	
@@ -26,7 +29,11 @@ public class LoginTest extends TestBase {
     public void verifyLoginWithInvalidUsername() {
 
 		LoginPage loginPage = new LoginPage();
+		
+		// Step 1: Login with invalid username and valid password
 		login(invalidUsername, password);
+		
+		// Step 2: Verify the error message is displayed
 		Assert.assertTrue(loginPage.errorMessageIsDisplayed());
 	}
 	
@@ -34,7 +41,11 @@ public class LoginTest extends TestBase {
 	public void verifyLoginWithInvalidPassword() {
 
 		LoginPage loginPage = new LoginPage();
+		
+		// Step 1: Login with valid username and invalid password
 		login(username, invalidPassword);
+		
+		// Step 2: Verify the error message is displayed
 		Assert.assertTrue(loginPage.errorMessageIsDisplayed());
 	}
 	
@@ -42,7 +53,11 @@ public class LoginTest extends TestBase {
 	public void verifyLoginWithInvalidCredentials() {
 
 		LoginPage loginPage = new LoginPage();
+		
+		// Step 1: Login with invalid username and invalid password
 		login(invalidUsername, invalidPassword);
+		
+		// Step 2: Verify the error message is displayed
 		Assert.assertTrue(loginPage.errorMessageIsDisplayed());
 	}
 

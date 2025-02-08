@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import driver.Browser;
 
+// Element class to define the methods for the elements
 public class Element extends BaseElement {
 
 	private final By locator;

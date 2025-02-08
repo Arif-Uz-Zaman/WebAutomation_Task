@@ -17,11 +17,22 @@ public class AddToCartTest extends TestBase {
 	@Test(groups="Add To Cart Functionality Test")
 	public void verifyAddToCartFunctionality () {
 		ProductPage productPage = new ProductPage();
+		// Step 1: Login with valid credentials
 		login(username, password);
+		
+		// Step 2: Verify the product page is displayed
 		Assert.assertTrue(productPage.productTitleIsDisplayed());
+		
+		// Step 3: Add the first product to the cart
 		productPage.addProductToCart(firstProductName);
+		
+		// Step 4: Add the second product to the cart
 		productPage.addProductToCart(secondProductName);
+		
+		// Step 5: Click on the cart icon
 		productPage.clickOnCartIcon();
+		
+		// Step 6: Verify both products are in the cart
 		Assert.assertTrue(productPage.isProductInCart(firstProductName), "First product is not in the cart");
 		Assert.assertTrue(productPage.isProductInCart(secondProductName), "Second product is not in the cart");
 		
@@ -29,10 +40,13 @@ public class AddToCartTest extends TestBase {
 	
 	@Test(groups="Add To Cart Functionality Test")
     public void verifyCartBadgeCountUpdatesCorrectly() {
-        // Step 1: Login with valid credentials
 		ProductPage productPage = new ProductPage();
+		
+		// Step 1: Login with valid credentials
 		login(username, password);
 		Assert.assertTrue(productPage.productTitleIsDisplayed());
+		
+		// Step 2: Add both products to the cart
 		productPage.addProductToCart(firstProductName);
 		productPage.addProductToCart(secondProductName);
 

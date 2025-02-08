@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import driver.Browser;
 
+// BaseElement class to define the common methods for all the elements
 public abstract class BaseElement {
 	private By locator;
 

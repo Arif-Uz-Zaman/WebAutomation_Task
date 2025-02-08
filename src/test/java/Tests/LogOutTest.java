@@ -14,11 +14,19 @@ public class LogOutTest extends TestBase {
 
 	@Test(groups="Locked-Out User Validation Test")
 	public void verifyLogOutFunctionality() {
-		login(username, password);
 		ProductPage productPage = new ProductPage();
 		LoginPage loginPage = new LoginPage();
+		
+		// Step 1: Login with valid credentials
+		login(username, password);
+		
+		// Step 2: click on the menu button
 		productPage.clickOnMenuButton();
+		
+		// Step 3: click on the logout button
 		productPage.clickOnLogoutButton();
+		
+		// Step 4: Verify the login page is displayed
 		boolean isLoginPageDisplayed = loginPage.isLoginPageDisplayed();
 		Assert.assertTrue(isLoginPageDisplayed, "Login page is not displayed after logout");
 		

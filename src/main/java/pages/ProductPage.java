@@ -39,6 +39,7 @@ public class ProductPage {
         return new Element(By.xpath("//div[text()='" + productName + "']/following::button[contains(@id, 'remove')][1]"));
     }
     
+    // Get product names from the product page
     private List<String> getProductNames() {
         List<WebElement> productElements = itemNames.getElements();
         List<String> productNames = new ArrayList<>();
@@ -50,7 +51,7 @@ public class ProductPage {
         return productNames;
     }
 
-
+    // Get product prices from the product page
     private List<Double> getProductPrices() {
         List<WebElement> priceElements = itemPrices.getElements();
         List<Double> prices = new ArrayList<>();
@@ -118,13 +119,14 @@ public class ProductPage {
 	    }
 	}
 	
-
+	// select sorting option from dropdown
     public void selectSortingOption(String sortingOption) {
         ExplicitWait.elementToBeClickable(sortingDropdown.getLocator(), 5);
         Select dropdown = new Select(sortingDropdown.getElement());
         dropdown.selectByVisibleText(sortingOption);
     }
 
+    // Verify product sorting by name
     public boolean verifyProductSortingByName(String sortingOption) {
         selectSortingOption(sortingOption);
         List<String> productNamesAfterSorting = getProductNames();
@@ -139,6 +141,7 @@ public class ProductPage {
         return productNamesAfterSorting.equals(sortedList);
     }
 
+    // Verify product sorting by price
     public boolean verifyProductSortingByPrice(String sortingOption) {
         selectSortingOption(sortingOption);
         List<Double> productPricesAfterSorting = getProductPrices();
@@ -153,11 +156,13 @@ public class ProductPage {
         return productPricesAfterSorting.equals(sortedPrices);
     }
     
+    // Click on menu button
 	public void clickOnMenuButton() {
 		ExplicitWait.elementToBeClickable(menuButton.getLocator(), 5);
 		menuButton.click();
 	}
 	
+	// Click on logout button
 	public void clickOnLogoutButton() {
 		ExplicitWait.elementToBeClickable(logoutButton.getLocator(), 5);
 		logoutButton.click();
