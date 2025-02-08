@@ -2,6 +2,8 @@
 	"username": "standard_user",
 	"password" : "secret_sauce",
 	
+	"lockedUsername": "locked_out_user",
+	
 	"firstProuctName": "Sauce Labs Backpack",
 	"secondProductName": "Sauce Labs Bike Light",
 	

@@ -14,7 +14,7 @@ public class SortingProductsTest extends TestBase {
 	String username = DataReader.getStringValue("username", "TestData");
 	String password = DataReader.getStringValue("password", "TestData");
 	
-	@Test
+	@Test(groups="Sorting Products Validation Test")
 	public void verifyProductSortingFunctionality() {
 		ProductPage productPage = new ProductPage();
 		login(username, password);

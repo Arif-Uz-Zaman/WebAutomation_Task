@@ -12,6 +12,7 @@ public class LoginPage {
 	private final Element loginButton = new Element(By.id("login-button"));
 	private final Element errorMessage = new Element(By.xpath("//h3[@data-test='error' and contains(text(),'Username and password do not match')]"));
 	private final Element loginPageTitle = new Element(By.xpath("//div[@class='login_logo']"));
+	private final Element lockedOutUserErrorMessage = new Element(By.xpath("//h3[@data-test='error' and contains(text(),'Sorry, this user has been locked out')]"));
 	
 	public boolean isLoginPageDisplayed() {
 		ExplicitWait.visibilityOfElementLocated(loginPageTitle.getLocator(), 5);
@@ -42,6 +43,11 @@ public class LoginPage {
 	public boolean errorMessageIsDisplayed() {
 		ExplicitWait.visibilityOfElementLocated(errorMessage.getLocator(), 5);
 		return errorMessage.isDisplayed();
+	}
+	
+	public boolean isLockedOutUserErrorMessageDisplayed() {
+		ExplicitWait.visibilityOfElementLocated(lockedOutUserErrorMessage.getLocator(), 5);
+		return lockedOutUserErrorMessage.isDisplayed();
 	}
 
 }

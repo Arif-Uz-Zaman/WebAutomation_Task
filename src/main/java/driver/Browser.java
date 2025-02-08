@@ -39,7 +39,7 @@ public class Browser {
 		return driver;
 	}
 
-	
+	// getDriver method to return the driver instance
 	public static WebDriver getDriver() {
 		if (driver == null) {
 			initialize();
@@ -47,6 +47,7 @@ public class Browser {
 		return driver;
 	}
 
+	// quitDriver method to quit the driver instance
 	public static void quitDriver() {
 		if (driver != null) {
 			driver.quit();

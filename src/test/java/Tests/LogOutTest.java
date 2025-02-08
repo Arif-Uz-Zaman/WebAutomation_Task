@@ -12,7 +12,7 @@ public class LogOutTest extends TestBase {
 	String username = DataReader.getStringValue("username", "TestData");
 	String password = DataReader.getStringValue("password", "TestData");
 
-	@Test
+	@Test(groups="Locked-Out User Validation Test")
 	public void verifyLogOutFunctionality() {
 		login(username, password);
 		ProductPage productPage = new ProductPage();

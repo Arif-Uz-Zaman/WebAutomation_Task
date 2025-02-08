@@ -9,6 +9,7 @@ import pages.CheckoutPage;
 import pages.ProductPage;
 import utility.DataReader;
 
+
 public class CheckOutProcessTest extends TestBase {
 
 	String username = DataReader.getStringValue("username", "TestData");
@@ -17,7 +18,7 @@ public class CheckOutProcessTest extends TestBase {
 	JSONObject shippingInformation = DataReader.getJsonObject("shipingInformation", "TestData");
 	
 	
-	@Test
+	@Test(groups="Checkout Process Validation Test")
 	public void verifyCheckOutProcess() {
 		ProductPage productPage = new ProductPage();
 		CartPage cartPage = new CartPage();

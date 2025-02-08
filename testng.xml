@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Web Automation Task (https://www.saucedemo.com/)">
+  <test thread-count="5" name="Functional Tests">
+    <classes>
+      <class name="Tests.LoginTest"/>
+      <class name="Tests.AddToCartTest"/>
+      <class name="Tests.CheckOutProcessTest"/>
+      <class name="Tests.SortingProductsTest"/>
+      <class name="Tests.LogOutTest"/>
+      <class name="Tests.LockedOutUserTest"/>
+      <class name="Tests.CartBadgeCountTest"/>
+    </classes>
+  </test> <!-- Functional Tests -->
+</suite> <!-- Web Automation Task -->
